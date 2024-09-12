@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --dark-grey: #121212; 
+    --grey: #1E1E1E;
+    --light-grey: #E0E0E0; 
+    --blue: #299db5; 
+    --white: #FFFFFF;
+    --yellow: #F7E05C;
+    --green: #97CE4C; 
+    --bg-color: #2C2A4A; 
+    --card-color: #6A4C93; 
+    --accent-color: #F0E14A; 
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--light-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    background-image: url('assets/rick-and-morty.png');
+    background-size: cover;
+    background-position: center;
+    padding: 55px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3rem;
+    color: var(--blue);
+    text-shadow: 
+        1px 1px 0px var(--green),
+        -1px -1px 0px var(--green),
+        1px -1px 0px var(--green),
+        -1px 1px 0px var(--green);
+    font-family: 'Rick and Morty Font', sans-serif;
+    animation: colorChange 3s infinite;
+}
+
+@font-face {
+    font-family: 'Rick and Morty Font';
+    src: url('assets/get-schwifty/get_schwifty.ttf') format('truetype');
+}
+
+main {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+hr {
+    width: 90%;
+    margin: 1rem 0;
+}
+
+.finder {
+    width: 10rem;
+    height: 1rem;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    padding: 0.5rem;
+    border: 1px solid var(--light-grey);
+    background-color: var(--grey);
+    color: var(--light-grey);
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--card-color);
+    width: 6rem;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s;
+    font-size: 0.8rem; /* Adjusted font size relative to card size */
+}
+
+.card:hover {
+    transform: scale(1.05); 
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-height: 50%; /* Ensure image does not exceed half of the card's height */
+    object-fit: cover; /* Ensure the image covers its container while maintaining aspect ratio */
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    text-align: center;
+    height: 50%; /* Adjust the height to fill the remaining space of the card */
+    overflow: hidden;
+}
+
+.card-content h3 {
+    margin: 0;
+    color: var(--white);
+    font-size: 0.9rem; /* Adjusted font size for h3 */
+    line-height: 1.2;
+}
+
+.card-content p {
+    color: var(--light-grey);
+    font-size: 0.8rem; /* Adjusted font size for p */
+    line-height: 1.4;
+}
+
+footer {
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Keyframes for colorChange animation */
+@keyframes colorChange {
+    0% { color: var(--blue); }
+    70% { color: var(--yellow); }
+    100% { color: var(--blue); }
+}
